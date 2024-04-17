@@ -50,9 +50,9 @@ export function createFactory<CreateInputType, ReturnModelType>(
       data = hooks.beforeCreate(data);
     }
 
-    const prismaModel = camelCase(modelName);
+    // const prismaModel = camelCase(modelName);
 
-    let result = await prisma[prismaModel].create({
+    let result = await prisma[modelName].create({
       data,
       ...prismaOptions,
     });
